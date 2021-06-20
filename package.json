@@ -6,7 +6,8 @@
   "scripts": {
     "dev:build": "tsc -w",
     "dev:start": "nodemon node ./build/crowler.js",
-    "dev": "concurrently npm:dev:*"
+    "dev:parcel": "parcel index.html",
+    "dev": "tsc && concurrently npm:dev:*"
   },
   "nodemonConfig": {
     "ignore": [
@@ -34,6 +35,7 @@
     "@types/superagent": "^4.1.11",
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.7",
+    "parcel": "^2.0.0-beta.3.1",
     "ts-node": "^10.0.0"
   }
 }

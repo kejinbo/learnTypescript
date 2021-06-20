@@ -38,4 +38,45 @@ function add(first: number | string, second: number | string) {
   return first + second;
 }
 
-// enum 枚举类型
+// 泛型 generic 泛指的类型
+// 起名没有特别要求，跟变量命名一样
+function join<ABC>(first: ABC, second: ABC) {
+  return `${first}${second}`;
+}
+// 这里的意思是：我指定ABC这个泛型的类型是string，那么我的两个参数就必须是string
+join<string>("1", "1");
+// join<string>("1", 1); // 不是string 的参数就会报错
+
+// 类中使用泛型
+// class DataManage<T> {
+//   constructor(public data: T[]){}
+//   getItem(index: number){
+//     return this.data[index];
+//   }
+// }
+// const data = new DataManage<string>(['sss'])
+
+// 当我的代码里面使用了泛型，而我传的数据是一个对象，并且引用了对象里面熟读属性
+interface Item {
+  name: string;
+  [propName: string]: any;
+}
+// 泛型继承Item接口的属性。使用 extend 可以更好的约束数据的类型
+class DataManage<T extends Item> {
+  constructor(public data: T[]) {}
+
+  getItem(index: number): string {
+    return this.data[index].name;
+  }
+}
+
+const data = new DataManage([
+  {
+    name: "kebobo",
+  },
+]);
+
+// 如何使用泛型作为一个具体的类型注解
+const foo: <T>(params: T) => T = <T>(params: T) => {
+  return params;
+};

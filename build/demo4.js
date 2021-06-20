@@ -22,7 +22,7 @@ var People = /** @class */ (function () {
         this.name = name;
     }
     // 暴露一个方法提供给外部
-    //static讲这个方法挂载到People类上，类似于 Object.prototype 上创建属性
+    //static讲这个方法挂载到People类上，类似于 function foo(){} foo.xxx
     People.getInstance = function (name) {
         if (!this.instance) {
             this.instance = new People(name);
