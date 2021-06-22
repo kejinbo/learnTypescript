@@ -7,6 +7,7 @@
     "dev:build": "tsc -w",
     "dev:start": "nodemon node ./build/crowler.js",
     "dev:parcel": "parcel index.html",
+    "dev:demo6": "ts-node ./src/demo6.ts",
     "dev": "tsc && concurrently npm:dev:*"
   },
   "nodemonConfig": {

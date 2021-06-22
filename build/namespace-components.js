@@ -1,3 +1,4 @@
+"use strict";
 var Component;
 (function (Component) {
     var Header = /** @class */ (function () {

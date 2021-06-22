@@ -2,7 +2,6 @@ import fs from "fs";
 import path from "path";
 import superagent from "superagent";
 import BoAnalyzer from "./analyzer";
-
 export interface Analyzer {
   analyze: (html: string, filePath: string) => string;
 }

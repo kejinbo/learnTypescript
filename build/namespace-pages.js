@@ -1,3 +1,4 @@
+"use strict";
 /// <reference path="./namespace-components.ts" />
 var Home;
 (function (Home) {
@@ -23,7 +24,7 @@ var Home;
     var t = new Teacher({
         name: "kbobo",
         age: 20,
-        gender: "male"
+        gender: "male",
     });
     var i = t.getInfo("age");
     console.log(i);

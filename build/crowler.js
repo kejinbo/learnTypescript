@@ -43,6 +43,7 @@ var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
 var superagent_1 = __importDefault(require("superagent"));
 var analyzer_1 = __importDefault(require("./analyzer"));
+console.log(111);
 var Crowler = /** @class */ (function () {
     function Crowler(url, analyzer) {
         this.url = url;
